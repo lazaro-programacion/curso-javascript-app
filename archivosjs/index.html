@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+    <script src="./js/scripts.js" type="module">
+    </script>
+</head>
+
+<body>
+
+    <script type="module">
+        import {escribeAlgo, init} from './js/scripts.js';
+
+        init();
+      
+        
+      </script>
+
+    <script>
+        
+        let calculaAltura = () => {
+            let base = document.getElementById("base").value;
+            let altura = document.getElementById("altura").value;
+
+            console.log(base, altura);
+
+            console.log(document);
+            let header = document.querySelector(".message .header");
+            let parrafo = document.querySelector(".message p");
+
+            if (parseInt(base) && parseInt(altura)) {
+                header.innerText = "El resultado es : ";
+                parrafo.innerText = calculaArea(base, altura);
+            } else {
+                header.innerText="La has cagao";
+                parrafo.innerText="";
+            }
+        }
+
+    </script>
+
+    <form>
+        Base: <input id="base"></input>
+        Altura: <input id="altura"></input>
+    </form>
+    <button class="ui primary button" onclick="calculaAltura()">Calcula</button>
+
+    <div class="ui message">
+        <div class="header">
+
+        </div>
+        <p></p>
+    </div>
+
+    <button onclick="escribeAlgo(document.getElementById('mensaje'))">Escribe algo</button>
+
+    <div id ="mensaje"></div>
+
+
+
+
+
+
+</body>
+
+</html>
