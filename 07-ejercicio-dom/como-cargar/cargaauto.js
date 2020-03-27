@@ -9,7 +9,9 @@ const renderElement = () => {
     document.getElementById("midiv").appendChild(elemento());
 }
 
-const init = () => {
+export const init = () => {
     document.querySelector("body").addEventListener("load", renderElement());
 }
+
+
 
