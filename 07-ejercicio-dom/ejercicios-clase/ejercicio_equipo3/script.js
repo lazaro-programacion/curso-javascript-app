@@ -1,4 +1,4 @@
-import pizzas from "../pizzas-content.js";
+import pizzas from "../../pizzas-content.js";
 
 
 const _createHeader = () => {

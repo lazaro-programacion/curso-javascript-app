@@ -1,6 +1,6 @@
 //si en el módulo se definió como export default 
 //se debe importar sin llaves
-import pizzas from '../pizzas-content.js';
+import pizzas from '../../pizzas-content.js';
 
 /* pizzas.forEach(
     (pizza) => {
