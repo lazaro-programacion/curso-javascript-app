@@ -180,7 +180,20 @@ personas.filter(
 
 
 
+/**
+ * Filtra la matríz en función de un criterio de búsqueda
+ */
+
+const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
 
+const filterItems = query => {
+  return fruits.filter((el) =>
+    el.toLowerCase().indexOf(query.toLowerCase()) > -1
+  );
+}
+
+console.log(filterItems('ap')); 
+console.log(filterItems('an')); 
 
 

@@ -25,7 +25,7 @@ renderPizzaTable()
 // otra posibilidad es:
 renderPizzaTable(pizzas);
 ```
-
+ 
 
 Dónde ponerlo:
 
