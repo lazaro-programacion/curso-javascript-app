@@ -104,7 +104,6 @@ La tabla, que puede ser muy grande, si hacemos el div de tamaño fijo y overflow
 
 # 4. Mostrar los comentarios en la descripción de la pizza
 - Máx 3 comentarios
-
 (Date)
 
 
