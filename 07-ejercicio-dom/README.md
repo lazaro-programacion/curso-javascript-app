@@ -68,17 +68,73 @@ Si pulsamos "nombre" se nos ordenarán por nombre
 - Nombre pizza
 - Ingredientes
 
+#### Tips
+- Recomiendo el añadir el evento al crear el table row del data (tr)
+
+Manejador: 
+```javascript
+const _pizzaRowHandler = (e, pizza) => {
+    console.log(pizza);
+}
+```
+
+Y donde se crea la row
+```javascript
+    tr.addEventListener("click",
+        e => _pizzaRowHandler(e, pizza)
+    )
+```
+
+Toda la parte de divs , cssgrid y tamaños (plantilla) en el html
+
+```html
+    <div class="container">
+        <div id="tabla"></div>
+        <div id="detallepizza"></div>
+    </div>
+```
+
+La tabla, que puede ser muy grande, si hacemos el div de tamaño fijo y overflow auto  o overflow-y scroll mantenemos el tamaño
+
+> Añadido:
+> Hacer un input de búsqueda encima de la tabla y, o bien un
+> botón buscar y busca el texto en el nombre de la pizza o 
+> bien que cada vez que se pulse una letra en el input
+> haga la búsqueda
+
 # 4. Mostrar los comentarios en la descripción de la pizza
 - Máx 3 comentarios
-
 (Date)
 
 
+(Java - JSONIgnore)
+(Java - CORS)
+
 # 5. Añadir la imágen a la pizza
+
+<img src="....">
+
+```html
+    <img id="imagenpizzas" src="" alt="" >
+    <script>
+        document.getElementById("imagenpizzas").src 
+            = "http://localhost:8080/pizzas/imagen/236/"
+    </script>
+```
 
 (necesitamos el backend...)
 
 # 6. Recuperar los datos del backend
+
+```javascript
+    fetch('http://localhost:8080/api/pizzas/').then(
+        res => res.json()
+    ).then(
+        console.log
+    ).catch(
+        err => console.log(err)
+    )
+```
 
 (Promesas)
 
