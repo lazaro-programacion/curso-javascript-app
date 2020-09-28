@@ -1,4 +1,4 @@
-let pizzas = [ 
+let pizzas = [
     {
         "id": 1,
         "nombre": "margarita",

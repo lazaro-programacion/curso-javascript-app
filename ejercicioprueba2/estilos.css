@@ -1,0 +1,62 @@
+.busqueda {
+    display: none;
+    position: absolute;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 300px auto;
+}
+
+#tabla {
+    overflow-y: scroll;
+    display: grid;
+}
+
+.tabla-pizzas {
+    border: 1px solid black;
+}
+
+.impar {
+    background-color: lightgray;
+}
+
+.par {
+    background-color: aliceblue;
+}
+
+.pizza-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 160px 140px;
+}
+
+.pizza-detalle {
+    display: grid;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.pizza-detalle h1 {
+    font-size: 1em;
+    text-align: center;
+    font-variant-caps: all-small-caps;
+}
+
+.pizza-detalle li {
+    font-size: 0.7em;
+}
+
+.pizza-imagen {
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    background-size: 100%;
+}
+
+.pizza-comentario {
+    display: grid;
+    grid-row: 2;
+    grid-column: 1/3;
+}

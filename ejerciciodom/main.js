@@ -1,16 +1,43 @@
 import pizzas from './pizzas-content.js';
+import pizzasAll from './pizzas-content.js';
 
-/* window.addEventListener('load', () => { */
+
+function ordenarPor(campo) {
+    const pizzaordenada= pizzas.sort(function(a, b) {
+
+        let x =a[campo] < b[campo]? 1 :-1;
+        
+        return x;
+      });
+ 
+   document.getElementById("table").innerHTML="";
+   document.getElementById("table").appendChild(createTable());
+}
+window.ordenarPor=ordenarPor;
+
+function ordenarContrario(campo) {
+    const pizzaordenada= pizzas.sort(function(a, b) {
+
+        let x =a[campo] > b[campo]? 1 :-1;
+        
+        return x;
+      });
+   document.getElementById("table").innerHTML="";
+   document.getElementById("table").appendChild(createTable());
+}
+window.ordenarPor=ordenarPor;
+
 function _createTableHeader() {
-    console.log("Esta es mi funcion");
-
-    const newTr = document.createElement("tr");
-
-    const th1 = document.createElement("th");
-    const th2 = document.createElement("th");
-
-    const texto1 = document.createTextNode("id");
+   
+    let newTr = document.createElement("tr");
+    let th1 = document.createElement("th");
+    let th2 = document.createElement("th");
+    let texto1 = document.createTextNode("id");
     th1.appendChild(texto1);
+    th1.addEventListener('click', (e)=> ordenarPor("id"));
+    th1.addEventListener('dblclick', (e)=> ordenarContrario("id"));
+    th2.addEventListener('click', (e)=> ordenarPor("nombre"));
+    th2.addEventListener('dblclick', (e)=> ordenarContrario("nombre"));
 
     const texto2 = document.createTextNode("nombre");
     th2.appendChild(texto2)
@@ -72,7 +99,7 @@ window._createTableHeader = _createTableHeader;
 function _createTableRow() {
     let divingredientes = document.getElementById("ingredientes");
 
-    
+
     let trbase = document.createElement("tr");
     for (let i = 0; i < pizzas.length; i++) {
 
@@ -154,20 +181,24 @@ window._createTableRow = _createTableRow;
 
 
 function createTable() {
-    const tabla = document.createElement("table");
-    const header = _createTableHeader();
-    const row = _createTableRow();
+   
+    let tabla = document.createElement("table");
+   
+    let header = _createTableHeader();
+    let row = _createTableRow();
     tabla.appendChild(header);
     tabla.appendChild(row);
+    
     tabla.style.backgroundColor = "red";
     tabla.style.border = "1px solid black";
-    console.log(tabla.children);
+  
 
 
     return tabla;
 
 }
-document.getElementById("table").appendChild(createTable());
+
+ document.getElementById("table").appendChild(createTable()); 
 window.createTable = createTable;
 
 
@@ -269,7 +300,7 @@ function mostrarComentario(pizza) {
     let com = document.createElement("h4");
     mydiv5.appendChild(com);
 
-    mydiv5.style.overflow = "auto";
+  
     mydiv5.style.background = "black";
     mydiv5.style.color = "white";
     mydiv5.style.fontSize = "initial";
@@ -293,3 +324,30 @@ function mostrarComentario(pizza) {
     return mydiv5;
 }
 window.mostrarComentario = mostrarComentario;
+
+function buscar(params) {
+    
+
+    const formulario = document.getElementById("formulario");
+    const texto = formulario.value.toLowerCase();
+    
+    const q =texto ;
+    
+     pizzas = pizzasAll.filter(
+          
+        (pizza) => {
+         
+            return pizza.nombre.toLowerCase().includes(q.toLowerCase());
+        }
+    )
+    
+    console.log("pizzas", pizzas);
+    console.log("pizzasfiltered", pizzas);
+    
+
+
+    createTable(pizzas);
+    }
+    window.buscar=buscar;
+    formulario.addEventListener('keypress', buscar); 
+    

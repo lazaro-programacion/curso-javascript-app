@@ -1,0 +1,76 @@
+#container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 90%;
+    max-height: 300px;
+}
+#tabla{
+    display: grid;
+    overflow: auto;
+    max-height: 300px;
+   grid-row: 2;
+
+}
+#comentario{
+    grid-row: 2;
+    overflow: auto;
+    max-height: 300px;
+}
+#contenedor_detalles{
+    display: grid;
+    grid-template-rows: 50% 50%;
+    max-height: 300px;
+    grid-row: 2;
+}
+#encabezado{
+    grid-row: 1;
+    grid-column: 1;
+    display: contents;
+
+}
+#encabezado input{
+    background-color: rgb(237, 241, 241);
+    color: rgb(0, 0, 0);
+
+}
+.tabla-pizzas *{
+    border: 1px solid black;
+ grid-column: 1;
+}
+.divIngredientes{
+
+grid-row: 1;
+border: 1px solid black;
+text-align: center;
+font-size: 15px;
+text-transform: uppercase;
+}
+
+.impar {
+    background-color: rgb(14, 206, 132);
+
+}
+
+.par {
+    background-color: rgb(73, 161, 238);
+  
+}
+
+.therow{
+    background-color: black;
+    color: white;
+    grid-column: 1;
+}
+.thid{
+    grid-column: 1;
+}
+.thnombre{
+    grid-column: 2;
+}
+.nombrePizza{
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    border-bottom: 5px solid white;
+    -webkit-text-stroke: 1px red;
+}
